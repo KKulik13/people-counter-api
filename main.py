@@ -19,7 +19,7 @@ class PeopleCounter(Resource):
     def get(self):
         img = cv2.imread('images/dworzec.jpeg')
         # gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
-        boxes, weights = hog.detectMultiScale(img, winStride=(8, 8))    # analizowanie zdjęcia
+        boxes, weights = hog.detectMultiScale(img, winStride=(8, 8))
         # boxes - na jakich współrzędnych znajdują  się osoby
         # print(type(img))
         # print(type(boxes))  # lista
