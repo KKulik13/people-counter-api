@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Licz osoby</title>
+</head>
+<body>
+    <ul>
+        {% if link %}
+            <h1> Ilosc osób na zdjęciu: {{ link }}</h1>
+        {% endif %}
+        {% if link == 0 %}
+            <h1> brak osób na zdjęciu </h1>
+        {% endif %}
+    </ul>
+    <form id="exchange_form" action="{{ url_for('PeopleCounterForm') }}" method="POST">
+        <label for="link"> Podaj link do obrazu </label>
+        <input type="text" id="link" name="link" ><br>
+        <input type="submit" value="Policz">
+    </form>
+
+</body>
+</html>
