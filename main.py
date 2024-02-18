@@ -23,7 +23,7 @@ def PeopleCounterForm():
     else:
         if 'link' in request.form:
             link = requests.get(request.form['link'], stream=True).raw
-            arr = np.asarray(bytearray(link.read()), dtype="uint8")  # przekształaca stringa na tabele
+            arr = np.asarray(bytearray(link.read()), dtype="uint8")
             img = cv2.imdecode(arr, cv2.IMREAD_COLOR)
             boxes, weights = hog.detectMultiScale(img, winStride=(8, 8))
         else:
